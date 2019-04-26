@@ -1,0 +1,17 @@
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Repository.dll.config
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Repository.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Repository.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Db.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.DbFactory.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.DbFactory.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Db.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\API.Db.dll.config
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\obj\Debug\API.Repository.csprojAssemblyReference.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\obj\Debug\API.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\obj\Debug\API.Repository.csproj.CopyComplete
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\obj\Debug\API.Repository.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Repository\obj\Debug\API.Repository.pdb

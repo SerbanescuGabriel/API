@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26ec2960602e4064bba337ab14c8c42f" Name="Diagram1">
+        <EntityTypeShape EntityType="LicentaModel.Cart" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.CartProduct" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Category" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Currency" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Group" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Manufacturer" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Product" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.ProductManufacturer" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.StockInTrade" Width="1.5" PointX="10.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.Unit" Width="1.5" PointX="8.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.User" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.UserDetail" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.UserGroup" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.UserPayment" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.WishList" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.WishListProduct" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicentaModel.WishListStatu" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="LicentaModel.FK__Cart__UserId__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__CartProdu__CartI__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__CartProdu__Produ__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__Product__Categor__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__StockInTr__Curre__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__UserGroup__Group__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__ProductMa__Manuf__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__ProductMa__Produ__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__StockInTr__Produ__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__WishListP__Produ__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__StockInTr__UnitI__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__User__UserDetail__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__UserPayme__UserI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__WishList__UserId__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__WishList__WishLi__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="LicentaModel.FK__WishListP__WishL__6477ECF3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

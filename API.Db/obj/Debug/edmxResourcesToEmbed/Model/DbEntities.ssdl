@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LicentaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CartId" />
+    </Key>
+    <Property Name="CartId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartName" Type="varchar" MaxLength="30" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CartProduct">
+    <Key>
+      <PropertyRef Name="CartProductId" />
+    </Key>
+    <Property Name="CartProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrencyName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerId" />
+    </Key>
+    <Property Name="ManufacturerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProductBarCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductManufacturer">
+    <Key>
+      <PropertyRef Name="ProductManufacturerId" />
+    </Key>
+    <Property Name="ProductManufacturerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StockInTrade">
+    <Key>
+      <PropertyRef Name="StockInTradeId" />
+    </Key>
+    <Property Name="StockInTradeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockSerial" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="InitialQuantity" Type="int" Nullable="false" />
+    <Property Name="QuantityLeft" Type="int" />
+    <Property Name="UnitId" Type="bigint" Nullable="false" />
+    <Property Name="PricePerUnit" Type="real" />
+    <Property Name="CurrencyId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitId" />
+    </Key>
+    <Property Name="UnitId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserDetailId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserDetailId" />
+    </Key>
+    <Property Name="UserDetailId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Sex" Type="bit" />
+    <Property Name="ProfilePicture" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupId" />
+    </Key>
+    <Property Name="UserGroupId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupId" Type="bigint" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="IsParent" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPayment">
+    <Key>
+      <PropertyRef Name="UserPaymentId" />
+    </Key>
+    <Property Name="UserPaymentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CVV" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="ExprirationDate" Type="date" Nullable="false" />
+    <Property Name="OwnerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WishList">
+    <Key>
+      <PropertyRef Name="WishListId" />
+    </Key>
+    <Property Name="WishListId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WishListName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="WishListStatusId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WishListProduct">
+    <Key>
+      <PropertyRef Name="WishListProductId" />
+    </Key>
+    <Property Name="WishListProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WishListId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WishListStatus">
+    <Key>
+      <PropertyRef Name="WishListStatusId" />
+    </Key>
+    <Property Name="WishListStatusId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WishListStatusName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Cart__UserId__5812160E">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CartProdu__CartI__5AEE82B9">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="CartProduct" Type="Self.CartProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartId" />
+      </Principal>
+      <Dependent Role="CartProduct">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CartProdu__Produ__5BE2A6F2">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="CartProduct" Type="Self.CartProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="CartProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Categor__4CA06362">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductMa__Manuf__5441852A">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+    <End Role="ProductManufacturer" Type="Self.ProductManufacturer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufacturerId" />
+      </Principal>
+      <Dependent Role="ProductManufacturer">
+        <PropertyRef Name="ManufacturerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductMa__Produ__5535A963">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductManufacturer" Type="Self.ProductManufacturer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductManufacturer">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockInTr__Curre__5070F446">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="StockInTrade" Type="Self.StockInTrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="StockInTrade">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockInTr__Produ__5165187F">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="StockInTrade" Type="Self.StockInTrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="StockInTrade">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StockInTr__UnitI__4F7CD00D">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="StockInTrade" Type="Self.StockInTrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitId" />
+      </Principal>
+      <Dependent Role="StockInTrade">
+        <PropertyRef Name="UnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__UserDetail__3E52440B">
+    <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="UserDetailId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserGroup__Group__398D8EEE">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupId" />
+      </Principal>
+      <Dependent Role="UserGroup">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserPayme__UserI__4222D4EF">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserPayment" Type="Self.UserPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserPayment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WishList__UserId__60A75C0F">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="WishList" Type="Self.WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WishList__WishLi__619B8048">
+    <End Role="WishListStatus" Type="Self.WishListStatus" Multiplicity="1" />
+    <End Role="WishList" Type="Self.WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WishListStatus">
+        <PropertyRef Name="WishListStatusId" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="WishListStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WishListP__Produ__656C112C">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="WishListProduct" Type="Self.WishListProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="WishListProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WishListP__WishL__6477ECF3">
+    <End Role="WishList" Type="Self.WishList" Multiplicity="1" />
+    <End Role="WishListProduct" Type="Self.WishListProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WishList">
+        <PropertyRef Name="WishListId" />
+      </Principal>
+      <Dependent Role="WishListProduct">
+        <PropertyRef Name="WishListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserGroup">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LicentaModelStoreContainer">
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CartProduct" EntityType="Self.CartProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductManufacturer" EntityType="Self.ProductManufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockInTrade" EntityType="Self.StockInTrade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPayment" EntityType="Self.UserPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WishList" EntityType="Self.WishList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WishListProduct" EntityType="Self.WishListProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WishListStatus" EntityType="Self.WishListStatus" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cart__UserId__5812160E" Association="Self.FK__Cart__UserId__5812160E">
+      <End Role="User" EntitySet="User" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CartProdu__CartI__5AEE82B9" Association="Self.FK__CartProdu__CartI__5AEE82B9">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="CartProduct" EntitySet="CartProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CartProdu__Produ__5BE2A6F2" Association="Self.FK__CartProdu__Produ__5BE2A6F2">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="CartProduct" EntitySet="CartProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Categor__4CA06362" Association="Self.FK__Product__Categor__4CA06362">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductMa__Manuf__5441852A" Association="Self.FK__ProductMa__Manuf__5441852A">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="ProductManufacturer" EntitySet="ProductManufacturer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductMa__Produ__5535A963" Association="Self.FK__ProductMa__Produ__5535A963">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductManufacturer" EntitySet="ProductManufacturer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockInTr__Curre__5070F446" Association="Self.FK__StockInTr__Curre__5070F446">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="StockInTrade" EntitySet="StockInTrade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockInTr__Produ__5165187F" Association="Self.FK__StockInTr__Produ__5165187F">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="StockInTrade" EntitySet="StockInTrade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StockInTr__UnitI__4F7CD00D" Association="Self.FK__StockInTr__UnitI__4F7CD00D">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="StockInTrade" EntitySet="StockInTrade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__UserDetail__3E52440B" Association="Self.FK__User__UserDetail__3E52440B">
+      <End Role="UserDetail" EntitySet="UserDetail" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserGroup__Group__398D8EEE" Association="Self.FK__UserGroup__Group__398D8EEE">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="UserGroup" EntitySet="UserGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserPayme__UserI__4222D4EF" Association="Self.FK__UserPayme__UserI__4222D4EF">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserPayment" EntitySet="UserPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WishList__UserId__60A75C0F" Association="Self.FK__WishList__UserId__60A75C0F">
+      <End Role="User" EntitySet="User" />
+      <End Role="WishList" EntitySet="WishList" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WishList__WishLi__619B8048" Association="Self.FK__WishList__WishLi__619B8048">
+      <End Role="WishListStatus" EntitySet="WishListStatus" />
+      <End Role="WishList" EntitySet="WishList" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WishListP__Produ__656C112C" Association="Self.FK__WishListP__Produ__656C112C">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="WishListProduct" EntitySet="WishListProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WishListP__WishL__6477ECF3" Association="Self.FK__WishListP__WishL__6477ECF3">
+      <End Role="WishList" EntitySet="WishList" />
+      <End Role="WishListProduct" EntitySet="WishListProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User" Association="Self.FK_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserGroup" EntitySet="UserGroup" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
