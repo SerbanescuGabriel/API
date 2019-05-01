@@ -2,6 +2,7 @@
 using API.Entities.ResponseCodes;
 using API.Repository.BusinessEntities;
 using API.Services.Interfaces;
+using API.Services.ServiceEnums;
 using System.Web.Http;
 
 namespace API.Controllers
@@ -10,10 +11,12 @@ namespace API.Controllers
     public class UsersController : ApiController
     {
         private readonly IUserService userService;
+        private readonly IEmailService emailService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IEmailService emailService)
         {
             this.userService = userService;
+            this.emailService = emailService;
         }
 
         [HttpPost]
@@ -34,7 +37,15 @@ namespace API.Controllers
 
             if (UserId > 0)
             {
-                return this.Ok(new { SuccessCodes.SucessUserAdded, UserId });
+                var emailResult = this.emailService.SendEmail(EmailTypeEnum.AccountCreationConfirmationEmail, request.Email);
+                if (emailResult.Equals("OK"))
+                {
+                    return this.Ok(new { SuccessCodes.SucessUserAdded, UserId });
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
