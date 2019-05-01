@@ -113,6 +113,10 @@
     <Compile Include="Autofac\Bootstraper.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Entities\Requests\LoginRequest.cs" />
+    <Compile Include="Entities\Requests\RegisterUserRequest.cs" />
+    <Compile Include="Entities\ResponseCodes\ErrorCodes.cs" />
+    <Compile Include="Entities\ResponseCodes\SuccessCodes.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -129,7 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Entities\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\API.Db\API.Db.csproj">
