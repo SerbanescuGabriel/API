@@ -66,7 +66,7 @@ namespace API.Controllers
 
             if (user != null)
             {
-                return this.Ok(new { SuccessCodes.SucessLogin, user });
+                return this.Ok(user);
             }
             else
             {
