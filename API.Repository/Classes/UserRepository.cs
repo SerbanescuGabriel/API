@@ -19,7 +19,7 @@ namespace API.Repository.Classes
             this.dbContext = dbContext;
         }
 
-        public long AddUser(UserEntity userEntity)
+        public UserEntity AddUser(UserEntity userEntity)
         {
             UserDetail userDetail = new UserDetail()
             {
@@ -43,7 +43,7 @@ namespace API.Repository.Classes
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
 
-            return user.UserId;
+            return user != null ? UserMapper.UserEntityMapper(user) : null;
         }
 
         public UserEntity Login(string username, string password)

@@ -33,14 +33,14 @@ namespace API.Controllers
 
             var userEntity = new UserEntity() { Username = request.Username, Password = request.Password, Email = request.Password };
 
-            var UserId = this.userService.AddUser(userEntity);
+            var user = this.userService.AddUser(userEntity);
 
-            if (UserId > 0)
+            if (user.UserId > 0)
             {
                 var emailResult = this.emailService.SendEmail(EmailTypeEnum.AccountCreationConfirmationEmail, request.Email);
                 if (emailResult.Equals("OK"))
                 {
-                    return this.Ok(new { SuccessCodes.SucessUserAdded, UserId });
+                    return this.Ok(user);
                 }
                 else
                 {

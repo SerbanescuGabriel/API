@@ -9,7 +9,7 @@ namespace API.Services.Interfaces
 {
     public interface IUserService
     {
-        long AddUser(UserEntity userEntity);
+        UserEntity AddUser(UserEntity userEntity);
 
         UserEntity Login(string username, string password);
 

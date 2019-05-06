@@ -19,7 +19,7 @@ namespace API.Services.Classes
             this.userRepository = userRepository;
         }
 
-        public long AddUser(UserEntity userEntity)
+        public UserEntity AddUser(UserEntity userEntity)
         {
             userEntity.Password = EncryptionHelper.EncryptSHA256(userEntity.Password);
             return this.userRepository.AddUser(userEntity);

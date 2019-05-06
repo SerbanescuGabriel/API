@@ -9,7 +9,7 @@ namespace API.Repository.Interfaces
 {
     public interface IUserRepository
     {
-        long AddUser(UserEntity userEntity);
+        UserEntity AddUser(UserEntity userEntity);
 
         UserEntity Login(string username, string password);
 
