@@ -31,7 +31,7 @@ namespace API.Controllers
                 return this.Ok(ErrorCodes.ErrorUsernameIsTaken);
             }
 
-            var userEntity = new UserEntity() { Username = request.Username, Password = request.Password, Email = request.Password };
+            var userEntity = new UserEntity() { Username = request.Username, Password = request.Password, Email = request.Email };
 
             var user = this.userService.AddUser(userEntity);
 

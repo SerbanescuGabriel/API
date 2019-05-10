@@ -164,7 +164,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50053</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49807/</IISUrl>
+          <IISUrl>http://localhost:49801/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
