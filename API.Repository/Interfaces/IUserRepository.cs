@@ -14,5 +14,7 @@ namespace API.Repository.Interfaces
         UserEntity Login(string username, string password);
 
         bool UserNameAlreadyExists(string username);
+
+        UserEntity GetById(long userId);
     }
 }

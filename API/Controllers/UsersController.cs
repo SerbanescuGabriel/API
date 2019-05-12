@@ -73,5 +73,15 @@ namespace API.Controllers
                 return this.Ok(ErrorCodes.ErrorInvalidCredentials);
             }
         }
+
+        [HttpGet]
+        [Route("{userId}")]
+        public IHttpActionResult GetUserById([FromUri]long userId)
+        {
+            if (userId > 0)
+                return this.Ok(userService.GetUserById(userId));
+            else
+                return this.BadRequest(ErrorCodes.ErrorInvalidParameters);
+        }
     }
 }

@@ -46,6 +46,16 @@ namespace API.Repository.Classes
             return user != null ? UserMapper.UserEntityMapper(user) : null;
         }
 
+        public UserEntity GetById(long userId)
+        {
+            var user = this.dbContext.Users
+                .Include("UserDetail")
+                .Where(u => u.UserId == userId)
+                .FirstOrDefault();
+
+            return user != null ? UserMapper.UserEntityMapper(user) : null;
+        }
+
         public UserEntity Login(string username, string password)
         {
             var user = this.dbContext.Users

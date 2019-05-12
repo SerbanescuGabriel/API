@@ -25,6 +25,11 @@ namespace API.Services.Classes
             return this.userRepository.AddUser(userEntity);
         }
 
+        public UserEntity GetUserById(long userId)
+        {
+            return this.userRepository.GetById(userId);
+        }
+
         public UserEntity Login(string username, string password)
         {
             return this.userRepository.Login(username, EncryptionHelper.EncryptSHA256(password));
