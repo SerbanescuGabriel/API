@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LicentaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LicentaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="CartId" />
@@ -26,7 +26,7 @@
             <PropertyRef Name="CategoryId" />
           </Key>
           <Property Name="CategoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CategoryName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Currency">
           <Key>
@@ -47,14 +47,14 @@
             <PropertyRef Name="ManufacturerId" />
           </Key>
           <Property Name="ManufacturerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ManufacturerName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ManufacturerName" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductId" />
           </Key>
           <Property Name="ProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
           <Property Name="ProductBarCode" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="CategoryId" Type="bigint" Nullable="false" />
         </EntityType>
@@ -442,8 +442,7 @@
             <End Role="UserGroup" EntitySet="UserGroup" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LicentaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -472,7 +471,7 @@
             <PropertyRef Name="CategoryId" />
           </Key>
           <Property Name="CategoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="Self.FK__Product__Categor__4CA06362" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="Currency">
@@ -496,7 +495,7 @@
             <PropertyRef Name="ManufacturerId" />
           </Key>
           <Property Name="ManufacturerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ManufacturerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ManufacturerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ProductManufacturers" Relationship="Self.FK__ProductMa__Manuf__5441852A" FromRole="Manufacturer" ToRole="ProductManufacturer" />
         </EntityType>
         <EntityType Name="Product">
@@ -504,7 +503,7 @@
             <PropertyRef Name="ProductId" />
           </Key>
           <Property Name="ProductId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ProductBarCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CategoryId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="CartProducts" Relationship="Self.FK__CartProdu__Produ__5BE2A6F2" FromRole="Product" ToRole="CartProduct" />
