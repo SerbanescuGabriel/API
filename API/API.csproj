@@ -111,9 +111,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Autofac\AutofacConfig.cs" />
     <Compile Include="Autofac\Bootstraper.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Entities\Requests\AddItemToCartRequest.cs" />
     <Compile Include="Entities\Requests\LoginRequest.cs" />
     <Compile Include="Entities\Requests\RegisterUserRequest.cs" />
     <Compile Include="Entities\ResponseCodes\ErrorCodes.cs" />

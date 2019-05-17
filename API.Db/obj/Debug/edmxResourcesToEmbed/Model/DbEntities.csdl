@@ -5,10 +5,10 @@
       <PropertyRef Name="CartId" />
     </Key>
     <Property Name="CartId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CartName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="UserId" Type="Int64" Nullable="false" />
     <NavigationProperty Name="User" Relationship="Self.FK__Cart__UserId__5812160E" FromRole="Cart" ToRole="User" />
     <NavigationProperty Name="CartProducts" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="Cart" ToRole="CartProduct" />
+    <Property Name="IsCurrentCart" Type="Boolean" />
   </EntityType>
   <EntityType Name="CartProduct">
     <Key>

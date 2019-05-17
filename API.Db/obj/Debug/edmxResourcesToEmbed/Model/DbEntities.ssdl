@@ -5,8 +5,8 @@
       <PropertyRef Name="CartId" />
     </Key>
     <Property Name="CartId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CartName" Type="varchar" MaxLength="30" />
     <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="IsCurrentCart" Type="bit" />
   </EntityType>
   <EntityType Name="CartProduct">
     <Key>

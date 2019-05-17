@@ -10,8 +10,8 @@
             <PropertyRef Name="CartId" />
           </Key>
           <Property Name="CartId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CartName" Type="varchar" MaxLength="30" />
           <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="IsCurrentCart" Type="bit" />
         </EntityType>
         <EntityType Name="CartProduct">
           <Key>
@@ -451,10 +451,10 @@
             <PropertyRef Name="CartId" />
           </Key>
           <Property Name="CartId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CartName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="UserId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK__Cart__UserId__5812160E" FromRole="Cart" ToRole="User" />
           <NavigationProperty Name="CartProducts" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="Cart" ToRole="CartProduct" />
+          <Property Name="IsCurrentCart" Type="Boolean" />
         </EntityType>
         <EntityType Name="CartProduct">
           <Key>
@@ -926,8 +926,8 @@
           <EntitySetMapping Name="Carts">
             <EntityTypeMapping TypeName="LicentaModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="IsCurrentCart" ColumnName="IsCurrentCart" />
                 <ScalarProperty Name="CartId" ColumnName="CartId" />
-                <ScalarProperty Name="CartName" ColumnName="CartName" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>

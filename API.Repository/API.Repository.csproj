@@ -51,11 +51,13 @@
     <Compile Include="BusinessEntities\UnitEntity.cs" />
     <Compile Include="BusinessEntities\UserDetailEntity.cs" />
     <Compile Include="BusinessEntities\UserEntity.cs" />
+    <Compile Include="Classes\CartRepository.cs" />
     <Compile Include="Classes\GenericRepository.cs" />
     <Compile Include="Classes\ProductEntity.cs" />
     <Compile Include="Classes\ProductRepository.cs" />
     <Compile Include="Classes\TestRepository.cs" />
     <Compile Include="Classes\UserRepository.cs" />
+    <Compile Include="Interfaces\ICartRepository.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Interfaces\ITestRepository.cs" />

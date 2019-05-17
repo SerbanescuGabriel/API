@@ -9,4 +9,3 @@ C:\Users\Gabriel\Desktop\Licenta\API\API.Db\obj\Debug\API.Db.csproj.CoreCompileI
 C:\Users\Gabriel\Desktop\Licenta\API\API.Db\obj\Debug\API.Db.csproj.CopyComplete
 C:\Users\Gabriel\Desktop\Licenta\API\API.Db\obj\Debug\API.Db.dll
 C:\Users\Gabriel\Desktop\Licenta\API\API.Db\obj\Debug\API.Db.pdb
-C:\Users\Gabriel\Desktop\Licenta\API\API.Db\obj\Debug\API.Db.csprojAssemblyReference.cache
