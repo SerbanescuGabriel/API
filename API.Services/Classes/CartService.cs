@@ -1,4 +1,5 @@
-﻿using API.Repository.Interfaces;
+﻿using API.Repository.Classes;
+using API.Repository.Interfaces;
 using API.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace API.Services.Classes
         public bool AddItemToActiveCart(long userId, long productId)
         {
             return this.cartRepository.AddItemToActiveCart(userId, productId);
+        }
+
+        public List<ProductEntity> GetCurrentCartProducts(long userId)
+        {
+            return this.cartRepository.GetCurrentCartProducts(userId);
         }
     }
 }

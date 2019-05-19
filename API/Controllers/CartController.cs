@@ -19,5 +19,12 @@ namespace API.Controllers
         {
             return this.Ok(this.cartService.AddItemToActiveCart(request.UserId, request.ProductId));
         }
+
+        [HttpGet]
+        [Route("{userId}")]
+        public IHttpActionResult GetItemsFromCurrentCart([FromUri] long userId)
+        {
+            return this.Ok(cartService.GetCurrentCartProducts(userId));
+        }
     }
 }
