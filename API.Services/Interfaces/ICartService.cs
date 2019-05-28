@@ -12,5 +12,7 @@ namespace API.Services.Interfaces
         bool AddItemToActiveCart(long userId, long productId);
 
         List<ProductEntity> GetCurrentCartProducts(long userId);
+
+        bool FinishShoping(long cartId);
     }
 }

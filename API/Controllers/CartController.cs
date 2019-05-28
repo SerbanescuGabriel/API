@@ -26,5 +26,12 @@ namespace API.Controllers
         {
             return this.Ok(cartService.GetCurrentCartProducts(userId));
         }
+
+        [HttpPost]
+        [Route("finish/{cartId}")]
+        public IHttpActionResult FinishShopping([FromUri] long cartId)
+        {
+            return this.Ok(cartService.FinishShoping(cartId));
+        }
     }
 }

@@ -23,6 +23,11 @@ namespace API.Services.Classes
             return this.cartRepository.AddItemToActiveCart(userId, productId);
         }
 
+        public bool FinishShoping(long cartId)
+        {
+            return this.cartRepository.FinishShoping(cartId);
+        }
+
         public List<ProductEntity> GetCurrentCartProducts(long userId)
         {
             return this.cartRepository.GetCurrentCartProducts(userId);
