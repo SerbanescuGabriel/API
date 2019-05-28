@@ -28,6 +28,11 @@ namespace API.Services.Classes
             return this.cartRepository.FinishShoping(cartId);
         }
 
+        public long GetCurrentCartId(long userId)
+        {
+            return this.cartRepository.GetCurrentCartId(userId);
+        }
+
         public List<ProductEntity> GetCurrentCartProducts(long userId)
         {
             return this.cartRepository.GetCurrentCartProducts(userId);

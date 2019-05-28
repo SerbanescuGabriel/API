@@ -14,5 +14,7 @@ namespace API.Repository.Interfaces
         List<ProductEntity> GetCurrentCartProducts(long userId);
 
         bool FinishShoping(long cartId);
+
+        long GetCurrentCartId(long userId);
     }
 }

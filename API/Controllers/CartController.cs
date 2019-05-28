@@ -33,5 +33,12 @@ namespace API.Controllers
         {
             return this.Ok(cartService.FinishShoping(cartId));
         }
+
+        [HttpGet]
+        [Route("cartId/{userId}")]
+        public IHttpActionResult GetCurrentCartId([FromUri] long userId)
+        {
+            return this.Ok(this.cartService.GetCurrentCartId(userId));
+        }
     }
 }

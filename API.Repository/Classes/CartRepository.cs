@@ -48,6 +48,11 @@ namespace API.Repository.Classes
             return dbContext.SaveChanges() > 0;
         }
 
+        public long GetCurrentCartId(long userId)
+        {
+            return this.dbContext.Carts.FirstOrDefault(c => c.UserId == userId && c.IsCurrentCart == true).CartId;
+        }
+
         public List<ProductEntity> GetCurrentCartProducts(long userId)
         {
             var products = from p in this.dbContext.Products
