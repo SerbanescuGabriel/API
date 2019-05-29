@@ -43,7 +43,7 @@ namespace API.Services.Classes
             msg.Body = string.Format("<html><head></head><body><b>Account Creation Confirmation</b></body>");
             try
             {
-                client.Send(msg);
+                //client.Send(msg);
                 return "OK";
             }
             catch (Exception ex)

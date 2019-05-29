@@ -23,12 +23,13 @@ namespace API.Repository.Classes
         {
             UserDetail userDetail = new UserDetail()
             {
-                FirstName = "",
-                LastName = "",
-                Age = 0,
-                Sex = true,
-                ProfilePicture = ""
+                FirstName = userEntity.UserDetails.FirstName,
+                LastName = userEntity.UserDetails.LastName,
+                Age = userEntity.UserDetails.Age,
+                Sex = userEntity.UserDetails.Sex,
+                ProfilePicture = userEntity.UserDetails.ProfilePicture
             };
+
             dbContext.UserDetails.Add(userDetail);
             dbContext.SaveChanges();
 
