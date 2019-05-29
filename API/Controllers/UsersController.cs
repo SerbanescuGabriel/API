@@ -20,7 +20,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult AddUser(UserEntity request)
+        public IHttpActionResult AddUser(RegisterRequest request)
         {
             if (request == null)
             {
@@ -31,9 +31,22 @@ namespace API.Controllers
                 return this.Ok(ErrorCodes.ErrorUsernameIsTaken);
             }
 
-            //var userEntity = new UserEntity() { Username = request.Username, Password = request.Password, Email = request.Email };
+            var userEntity = new UserEntity() {
+                Username = request.Username,
+                Password = request.Password,
+                Email = request.Email };
 
-            var user = this.userService.AddUser(request);
+            var userDetail = new UserDetailEntity()
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Age = request.Age,
+                Sex = request.Sex
+            };
+
+            userEntity.UserDetails = userDetail;
+
+            var user = this.userService.AddUser(userEntity);
 
             if (user.UserId > 0)
             {
