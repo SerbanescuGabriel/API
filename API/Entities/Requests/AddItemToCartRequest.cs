@@ -9,5 +9,6 @@ namespace API.Entities.Requests
     {
         public long UserId { get; set; }
         public long ProductId { get; set; }
+        public long Quantity { get; set; }
     }
 }

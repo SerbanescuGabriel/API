@@ -9,7 +9,7 @@ namespace API.Repository.Interfaces
 {
     public interface ICartRepository
     {
-        bool AddItemToActiveCart(long userId, long productId);
+        bool AddItemToActiveCart(long userId, long productId, long quantity);
 
         List<ProductEntity> GetCurrentCartProducts(long userId);
 

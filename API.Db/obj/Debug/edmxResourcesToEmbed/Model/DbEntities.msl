@@ -13,6 +13,7 @@
     <EntitySetMapping Name="CartProducts">
       <EntityTypeMapping TypeName="LicentaModel.CartProduct">
         <MappingFragment StoreEntitySet="CartProduct">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="CartProductId" ColumnName="CartProductId" />
           <ScalarProperty Name="CartId" ColumnName="CartId" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />

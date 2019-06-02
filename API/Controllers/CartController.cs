@@ -17,7 +17,7 @@ namespace API.Controllers
         [HttpPost]
         public IHttpActionResult AddItemToCart([FromBody] AddItemToCartRequest request)
         {
-            return this.Ok(this.cartService.AddItemToActiveCart(request.UserId, request.ProductId));
+            return this.Ok(this.cartService.AddItemToActiveCart(request.UserId, request.ProductId, request.Quantity));
         }
 
         [HttpGet]

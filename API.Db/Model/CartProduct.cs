@@ -17,6 +17,7 @@ namespace API.Db.Model
         public long CartProductId { get; set; }
         public long CartId { get; set; }
         public long ProductId { get; set; }
+        public Nullable<int> Quantity { get; set; }
     
         public virtual Cart Cart { get; set; }
         public virtual Product Product { get; set; }

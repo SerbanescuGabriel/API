@@ -19,6 +19,7 @@
     <Property Name="ProductId" Type="Int64" Nullable="false" />
     <NavigationProperty Name="Cart" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="CartProduct" ToRole="Cart" />
     <NavigationProperty Name="Product" Relationship="Self.FK__CartProdu__Produ__5BE2A6F2" FromRole="CartProduct" ToRole="Product" />
+    <Property Name="Quantity" Type="Int32" />
   </EntityType>
   <EntityType Name="Category">
     <Key>

@@ -18,9 +18,9 @@ namespace API.Services.Classes
             this.cartRepository = cartRepository;
         }
 
-        public bool AddItemToActiveCart(long userId, long productId)
+        public bool AddItemToActiveCart(long userId, long productId, long quantity)
         {
-            return this.cartRepository.AddItemToActiveCart(userId, productId);
+            return this.cartRepository.AddItemToActiveCart(userId, productId, quantity);
         }
 
         public bool FinishShoping(long cartId)

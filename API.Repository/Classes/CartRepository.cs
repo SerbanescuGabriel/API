@@ -18,7 +18,7 @@ namespace API.Repository.Classes
             this.dbContext = dbContext;
         }
 
-        public bool AddItemToActiveCart(long userId, long productId)
+        public bool AddItemToActiveCart(long userId, long productId, long quantity)
         {
             var activeCart = dbContext.Carts.FirstOrDefault(c => c.UserId == userId && c.IsCurrentCart == true);
             if (activeCart == null)
@@ -29,7 +29,17 @@ namespace API.Repository.Classes
                 activeCart = newCart;
             }
             var product = dbContext.Products.FirstOrDefault(p => p.ProductId == productId);
-            dbContext.CartProducts.Add(new CartProduct { CartId = activeCart.CartId, ProductId = product.ProductId });
+            var cartProduct = dbContext.CartProducts.FirstOrDefault(cp => cp.CartId == activeCart.CartId && cp.ProductId == product.ProductId);
+
+            if (cartProduct == null)
+            {
+                dbContext.CartProducts.Add(new CartProduct { CartId = activeCart.CartId, ProductId = product.ProductId, Quantity = (int)quantity });
+            }
+            else
+            {
+                cartProduct.Quantity += (int)quantity;
+            }
+            
 
             return dbContext.SaveChanges() > 0;
         }
@@ -69,7 +79,8 @@ namespace API.Repository.Classes
                                ProductName = p.ProductName,
                                ManufacturerName = m.ManufacturerName,
                                CategoryName = c.CategoryName,
-                               Price = s.PricePerUnit
+                               Price = s.PricePerUnit,
+                               Quantity = cp.Quantity
                            };
 
             return products.ToList();

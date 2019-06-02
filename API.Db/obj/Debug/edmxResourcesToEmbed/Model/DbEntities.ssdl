@@ -15,6 +15,7 @@
     <Property Name="CartProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CartId" Type="bigint" Nullable="false" />
     <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
   </EntityType>
   <EntityType Name="Category">
     <Key>

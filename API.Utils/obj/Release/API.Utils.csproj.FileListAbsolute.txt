@@ -1,0 +1,6 @@
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\bin\Release\API.Utils.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\bin\Release\API.Utils.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Release\API.Utils.csprojAssemblyReference.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Release\API.Utils.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Release\API.Utils.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Release\API.Utils.pdb

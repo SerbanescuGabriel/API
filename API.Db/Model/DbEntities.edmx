@@ -20,6 +20,7 @@
           <Property Name="CartProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CartId" Type="bigint" Nullable="false" />
           <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -465,6 +466,7 @@
           <Property Name="ProductId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Cart" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="CartProduct" ToRole="Cart" />
           <NavigationProperty Name="Product" Relationship="Self.FK__CartProdu__Produ__5BE2A6F2" FromRole="CartProduct" ToRole="Product" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -935,6 +937,7 @@
           <EntitySetMapping Name="CartProducts">
             <EntityTypeMapping TypeName="LicentaModel.CartProduct">
               <MappingFragment StoreEntitySet="CartProduct">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="CartProductId" ColumnName="CartProductId" />
                 <ScalarProperty Name="CartId" ColumnName="CartId" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />

@@ -1,0 +1,12 @@
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\API.DbFactory.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\API.DbFactory.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\API.Db.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\EntityFramework.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\API.Db.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\API.Db.dll.config
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\bin\Release\EntityFramework.xml
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\obj\Release\API.DbFactory.csprojAssemblyReference.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\obj\Release\API.DbFactory.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\obj\Release\API.DbFactory.csproj.CopyComplete
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\obj\Release\API.DbFactory.dll
+C:\Users\Gabriel\Desktop\Licenta\API\API.DbFactory\obj\Release\API.DbFactory.pdb
