@@ -10,5 +10,7 @@ namespace API.Repository.Interfaces
     public interface IProductRepository
     {
         ProductEntity GetProductByBarCode(string barCode);
+
+        List<ProductEntity> GetAllProducts();
     }
 }

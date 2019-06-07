@@ -118,6 +118,7 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Entities\Requests\AddItemToCartRequest.cs" />
     <Compile Include="Entities\Requests\LoginRequest.cs" />
+    <Compile Include="Entities\Requests\ModifyQuantityRequest.cs" />
     <Compile Include="Entities\Requests\RegisterRequest.cs" />
     <Compile Include="Entities\Requests\RegisterUserRequest.cs" />
     <Compile Include="Entities\ResponseCodes\ErrorCodes.cs" />

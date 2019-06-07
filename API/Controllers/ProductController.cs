@@ -24,5 +24,12 @@ namespace API.Controllers
         {
             return this.Ok(this.productService.GetProductByBarCode(barCode));
         }
+
+        [HttpGet]
+        [Route()]
+        public IHttpActionResult GetAllProducts()
+        {
+            return this.Ok(productService.GetAllProducts());
+        }
     }
 }

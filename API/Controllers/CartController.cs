@@ -40,5 +40,19 @@ namespace API.Controllers
         {
             return this.Ok(this.cartService.GetCurrentCartId(userId));
         }
+
+        [HttpPost]
+        [Route("add")]
+        public IHttpActionResult Add(ModifyQuantityRequest request)
+        {
+            return this.Ok(this.cartService.AddOneProductToQuantity(request.UserId, request.ProductId));
+        }
+
+        [HttpPost]
+        [Route("substract")]
+        public IHttpActionResult Substract(ModifyQuantityRequest request)
+        {
+            return this.Ok(this.cartService.SubstractOneProductToQuantity(request.UserId, request.ProductId));
+        }
     }
 }

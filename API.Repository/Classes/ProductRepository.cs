@@ -17,6 +17,25 @@ namespace API.Repository.Classes
             this.dbContext = dbContext;
         }
 
+        public List<ProductEntity> GetAllProducts()
+        {
+            var products = from p in this.dbContext.Products
+                          join pm in this.dbContext.ProductManufacturers on p.ProductId equals pm.ProductId
+                          join m in this.dbContext.Manufacturers on pm.ManufacturerId equals m.ManufacturerId
+                          join c in this.dbContext.Categories on p.CategoryId equals c.CategoryId
+                          join s in this.dbContext.StockInTrades on p.ProductId equals s.ProductId
+                          select new ProductEntity
+                          {
+                              ProductId = p.ProductId,
+                              ProductName = p.ProductName,
+                              ManufacturerName = m.ManufacturerName,
+                              CategoryName = c.CategoryName,
+                              Price = s.PricePerUnit
+                          };
+
+            return products.ToList();
+        }
+
         public ProductEntity GetProductByBarCode(string barCode)
         {
             var product = from p in this.dbContext.Products

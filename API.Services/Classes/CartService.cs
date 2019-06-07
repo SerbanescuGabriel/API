@@ -23,6 +23,11 @@ namespace API.Services.Classes
             return this.cartRepository.AddItemToActiveCart(userId, productId, quantity);
         }
 
+        public bool AddOneProductToQuantity(long userId, long productId)
+        {
+            return this.cartRepository.AddOneProductToQuantity(userId, productId);
+        }
+
         public bool FinishShoping(long cartId)
         {
             return this.cartRepository.FinishShoping(cartId);
@@ -36,6 +41,11 @@ namespace API.Services.Classes
         public List<ProductEntity> GetCurrentCartProducts(long userId)
         {
             return this.cartRepository.GetCurrentCartProducts(userId);
+        }
+
+        public bool SubstractOneProductToQuantity(long userId, long productId)
+        {
+            return this.cartRepository.SubstractOneProductToQuantity(userId, productId);
         }
     }
 }

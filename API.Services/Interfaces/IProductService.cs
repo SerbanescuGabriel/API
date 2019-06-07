@@ -10,5 +10,7 @@ namespace API.Services.Interfaces
     public interface IProductService
     {
         ProductEntity GetProductByBarCode(string barCode);
+
+        List<ProductEntity> GetAllProducts();
     }
 }

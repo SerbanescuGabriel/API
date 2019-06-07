@@ -16,5 +16,9 @@ namespace API.Services.Interfaces
         bool FinishShoping(long cartId);
 
         long GetCurrentCartId(long userId);
+
+        bool AddOneProductToQuantity(long userId, long productId);
+
+        bool SubstractOneProductToQuantity(long userId, long productId);
     }
 }
