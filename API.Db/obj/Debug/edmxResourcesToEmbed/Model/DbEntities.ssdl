@@ -128,9 +128,8 @@
       <PropertyRef Name="WishListId" />
     </Key>
     <Property Name="WishListId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="WishListName" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="UserId" Type="bigint" Nullable="false" />
-    <Property Name="WishListStatusId" Type="bigint" Nullable="false" />
+    <Property Name="IsCurrent" Type="bit" />
   </EntityType>
   <EntityType Name="WishListProduct">
     <Key>
@@ -303,18 +302,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__WishList__WishLi__619B8048">
-    <End Role="WishListStatus" Type="Self.WishListStatus" Multiplicity="1" />
-    <End Role="WishList" Type="Self.WishList" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="WishListStatus">
-        <PropertyRef Name="WishListStatusId" />
-      </Principal>
-      <Dependent Role="WishList">
-        <PropertyRef Name="WishListStatusId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__WishListP__Produ__656C112C">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="WishListProduct" Type="Self.WishListProduct" Multiplicity="*" />
@@ -419,10 +406,6 @@
     </AssociationSet>
     <AssociationSet Name="FK__WishList__UserId__60A75C0F" Association="Self.FK__WishList__UserId__60A75C0F">
       <End Role="User" EntitySet="User" />
-      <End Role="WishList" EntitySet="WishList" />
-    </AssociationSet>
-    <AssociationSet Name="FK__WishList__WishLi__619B8048" Association="Self.FK__WishList__WishLi__619B8048">
-      <End Role="WishListStatus" EntitySet="WishListStatus" />
       <End Role="WishList" EntitySet="WishList" />
     </AssociationSet>
     <AssociationSet Name="FK__WishListP__Produ__656C112C" Association="Self.FK__WishListP__Produ__656C112C">

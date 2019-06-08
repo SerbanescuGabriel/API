@@ -14,16 +14,7 @@ namespace API.Db.Model
     
     public partial class WishListStatu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WishListStatu()
-        {
-            this.WishLists = new HashSet<WishList>();
-        }
-    
         public long WishListStatusId { get; set; }
         public string WishListStatusName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WishList> WishLists { get; set; }
     }
 }

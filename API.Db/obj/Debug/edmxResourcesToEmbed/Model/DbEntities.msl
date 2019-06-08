@@ -141,10 +141,9 @@
     <EntitySetMapping Name="WishLists">
       <EntityTypeMapping TypeName="LicentaModel.WishList">
         <MappingFragment StoreEntitySet="WishList">
+          <ScalarProperty Name="IsCurrent" ColumnName="IsCurrent" />
           <ScalarProperty Name="WishListId" ColumnName="WishListId" />
-          <ScalarProperty Name="WishListName" ColumnName="WishListName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="WishListStatusId" ColumnName="WishListStatusId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

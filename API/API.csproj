@@ -116,7 +116,9 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WishlistController.cs" />
     <Compile Include="Entities\Requests\AddItemToCartRequest.cs" />
+    <Compile Include="Entities\Requests\AddProductToWislistRequest.cs" />
     <Compile Include="Entities\Requests\LoginRequest.cs" />
     <Compile Include="Entities\Requests\ModifyQuantityRequest.cs" />
     <Compile Include="Entities\Requests\RegisterRequest.cs" />

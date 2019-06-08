@@ -21,12 +21,10 @@ namespace API.Db.Model
         }
     
         public long WishListId { get; set; }
-        public string WishListName { get; set; }
         public long UserId { get; set; }
-        public long WishListStatusId { get; set; }
+        public Nullable<bool> IsCurrent { get; set; }
     
         public virtual User User { get; set; }
-        public virtual WishListStatu WishListStatu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WishListProduct> WishListProducts { get; set; }
     }

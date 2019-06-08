@@ -3,3 +3,4 @@ C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\bin\Debug\API.Utils.pdb
 C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Debug\API.Utils.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Debug\API.Utils.dll
 C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Debug\API.Utils.pdb
+C:\Users\Gabriel\Desktop\Licenta\API\API.Utils\obj\Debug\API.Utils.csprojAssemblyReference.cache

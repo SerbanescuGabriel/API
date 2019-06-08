@@ -46,11 +46,13 @@
     <Compile Include="Classes\ProductService.cs" />
     <Compile Include="Classes\TestService.cs" />
     <Compile Include="Classes\UserService.cs" />
+    <Compile Include="Classes\WishlistService.cs" />
     <Compile Include="Interfaces\ICartService.cs" />
     <Compile Include="Interfaces\IEmailService.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Interfaces\ITestService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IWishlistService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceEnums\EmailTypeEnum.cs" />
   </ItemGroup>

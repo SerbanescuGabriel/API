@@ -37,7 +37,6 @@
         <AssociationConnector Association="LicentaModel.FK__UserPayme__UserI__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="LicentaModel.FK__WishList__UserId__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="LicentaModel.FK_User" ManuallyRouted="false" />
-        <AssociationConnector Association="LicentaModel.FK__WishList__WishLi__619B8048" ManuallyRouted="false" />
         <AssociationConnector Association="LicentaModel.FK__WishListP__WishL__6477ECF3" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
