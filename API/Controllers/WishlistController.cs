@@ -25,5 +25,12 @@ namespace API.Controllers
         {
             return this.Ok(this.wishlistService.AddProductToWishList(request.UserId, request.ProductId));
         }
+
+        [HttpGet]
+        [Route("{userId}")]
+        public IHttpActionResult GetAllWishListProducts([FromUri] long userId)
+        {
+            return this.Ok(wishlistService.GetAllWishlistProducts(userId));
+        }
     }
 }

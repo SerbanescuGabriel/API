@@ -39,5 +39,27 @@ namespace API.Repository.Classes
             this.dbContext.WishListProducts.Add(newProductWishlist);
             return this.dbContext.SaveChanges() > 0;
         }
+
+        public List<ProductEntity> GetAllWishlistProducts(long userId)
+        {
+            var products = from p in this.dbContext.Products
+                           join pm in this.dbContext.ProductManufacturers on p.ProductId equals pm.ProductId
+                           join m in this.dbContext.Manufacturers on pm.ManufacturerId equals m.ManufacturerId
+                           join c in this.dbContext.Categories on p.CategoryId equals c.CategoryId
+                           join s in this.dbContext.StockInTrades on p.ProductId equals s.ProductId
+                           join wlp in this.dbContext.WishListProducts on p.ProductId equals wlp.ProductId
+                           join wish in this.dbContext.WishLists on wlp.WishListId equals wish.WishListId
+                           where wish.UserId == userId && wish.IsCurrent == true
+                           select new ProductEntity
+                           {
+                               ProductId = p.ProductId,
+                               ProductName = p.ProductName,
+                               ManufacturerName = m.ManufacturerName,
+                               CategoryName = c.CategoryName,
+                               Price = s.PricePerUnit
+                           };
+
+            return products.ToList();
+        }
     }
 }
