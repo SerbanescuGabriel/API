@@ -20,13 +20,22 @@ namespace API.Repository.Classes
 
         public bool AddProductToWishlist(long userId, long productId)
         {
+
             var activeWishlist = dbContext.WishLists.FirstOrDefault(ws => ws.UserId == userId && ws.IsCurrent == true);
+
             if (activeWishlist == null)
             {
                 var newWishlist = new WishList() { UserId = userId, IsCurrent = true };
                 dbContext.WishLists.Add(newWishlist);
                 dbContext.SaveChanges();
                 activeWishlist = newWishlist;
+            }
+            else
+            {
+                var item = dbContext.WishListProducts
+                    .FirstOrDefault(w => w.WishListId == activeWishlist.WishListId && w.ProductId == productId);
+                if (item != null)
+                    return true;
             }
 
             var product = dbContext.Products.FirstOrDefault(p => p.ProductId == productId);
@@ -38,6 +47,21 @@ namespace API.Repository.Classes
             var newProductWishlist = new WishListProduct() { WishListId = activeWishlist.WishListId, ProductId = product.ProductId };
             this.dbContext.WishListProducts.Add(newProductWishlist);
             return this.dbContext.SaveChanges() > 0;
+        }
+
+        public bool DeleteWishListItem(long userId, long productId)
+        {
+            var activeWishlist = dbContext.WishLists.FirstOrDefault(ws => ws.UserId == userId && ws.IsCurrent == true);
+
+            if (activeWishlist == null)
+                return false;
+
+            var item = dbContext.WishListProducts
+                .FirstOrDefault(w => w.WishListId == activeWishlist.WishListId && w.ProductId == productId);
+
+            dbContext.WishListProducts.Remove(item);
+
+            return dbContext.SaveChanges() > 0;
         }
 
         public List<ProductEntity> GetAllWishlistProducts(long userId)

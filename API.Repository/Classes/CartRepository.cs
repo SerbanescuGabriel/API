@@ -116,7 +116,7 @@ namespace API.Repository.Classes
         {
             var cartId = dbContext.Carts.FirstOrDefault(c => c.UserId == userId && c.IsCurrentCart == true).CartId;
             var productCart = dbContext.CartProducts.FirstOrDefault(pc => pc.CartId == cartId && pc.ProductId == productId);
-            if (productCart.Quantity <= 0)
+            if (productCart.Quantity <= 1)
             {
                 return false;
             }

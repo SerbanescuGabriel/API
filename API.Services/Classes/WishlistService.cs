@@ -23,6 +23,11 @@ namespace API.Services.Classes
             return this.wishlistRepository.AddProductToWishlist(userId, productId);
         }
 
+        public bool DeleteWishListItem(long userId, long productId)
+        {
+            return this.wishlistRepository.DeleteWishListItem(userId, productId);
+        }
+
         public List<ProductEntity> GetAllWishlistProducts(long userId)
         {
             return this.wishlistRepository.GetAllWishlistProducts(userId);

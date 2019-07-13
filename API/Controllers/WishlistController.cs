@@ -32,5 +32,15 @@ namespace API.Controllers
         {
             return this.Ok(wishlistService.GetAllWishlistProducts(userId));
         }
+
+        [HttpPost]
+        [Route("remove")]
+        public IHttpActionResult DeleteWishListItem(DeleteWishListItemRequest request)
+        {
+            if (request == null)
+                return this.Ok(false);
+
+            return this.Ok(wishlistService.DeleteWishListItem(request.UserId, request.ProductId));
+        }
     }
 }

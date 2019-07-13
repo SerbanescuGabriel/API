@@ -12,5 +12,7 @@ namespace API.Repository.Interfaces
         bool AddProductToWishlist(long userId, long productId);
 
         List<ProductEntity> GetAllWishlistProducts(long userId);
+
+        bool DeleteWishListItem(long userId, long productId);
     }
 }
