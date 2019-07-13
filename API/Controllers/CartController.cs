@@ -54,5 +54,15 @@ namespace API.Controllers
         {
             return this.Ok(this.cartService.SubstractOneProductToQuantity(request.UserId, request.ProductId));
         }
+
+        [HttpPost]
+        [Route("remove")]
+        public IHttpActionResult RemoveItemFromCart(RemoveItemFromCartRequest request)
+        {
+            if (request == null)
+                return this.Ok(false);
+
+            return this.Ok(this.cartService.DeleteItemFromCart(request.UserId, request.ProductId));
+        }
     }
 }

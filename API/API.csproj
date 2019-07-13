@@ -123,6 +123,7 @@
     <Compile Include="Entities\Requests\ModifyQuantityRequest.cs" />
     <Compile Include="Entities\Requests\RegisterRequest.cs" />
     <Compile Include="Entities\Requests\RegisterUserRequest.cs" />
+    <Compile Include="Entities\Requests\RemoveItemFromCartRequest.cs" />
     <Compile Include="Entities\ResponseCodes\ErrorCodes.cs" />
     <Compile Include="Entities\ResponseCodes\SuccessCodes.cs" />
     <Compile Include="Global.asax.cs">

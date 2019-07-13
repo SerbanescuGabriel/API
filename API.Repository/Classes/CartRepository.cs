@@ -53,6 +53,23 @@ namespace API.Repository.Classes
             return dbContext.SaveChanges() > 0;
         }
 
+        public bool DeleteItemFromCart(long userId, long productId)
+        {
+            var cart = dbContext.Carts.FirstOrDefault(c => c.UserId == userId && c.IsCurrentCart == true);
+
+            if (cart == null)
+                return false;
+
+            var productCart = dbContext.CartProducts.FirstOrDefault(cp => cp.CartId == cart.CartId && cp.ProductId == productId);
+
+            if (productCart == null)
+                return false;
+
+            dbContext.CartProducts.Remove(productCart);
+
+            return dbContext.SaveChanges() > 0;
+        }
+
         public bool FinishShoping(long cartId)
         {
             var productIds = dbContext.CartProducts.Where(cp => cp.CartId == cartId).Select(pc => pc.ProductId).ToList();
@@ -99,6 +116,11 @@ namespace API.Repository.Classes
         {
             var cartId = dbContext.Carts.FirstOrDefault(c => c.UserId == userId && c.IsCurrentCart == true).CartId;
             var productCart = dbContext.CartProducts.FirstOrDefault(pc => pc.CartId == cartId && pc.ProductId == productId);
+            if (productCart.Quantity <= 0)
+            {
+                return false;
+            }
+
             productCart.Quantity--;
 
             return dbContext.SaveChanges() > 0;

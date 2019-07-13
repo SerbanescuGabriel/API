@@ -20,5 +20,7 @@ namespace API.Repository.Interfaces
         bool AddOneProductToQuantity(long userId, long productId);
 
         bool SubstractOneProductToQuantity(long userId, long productId);
+
+        bool DeleteItemFromCart(long userId, long productId);
     }
 }

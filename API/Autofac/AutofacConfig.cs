@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Compilation;
 using System.Web.Http;
 
 namespace API.Autofac
@@ -28,6 +29,8 @@ namespace API.Autofac
         {
             var config = GlobalConfiguration.Configuration;
 
+            var aseemblyes = BuildManager.GetReferencedAssemblies().Cast<Assembly>().ToArray();
+
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
 
             builder.RegisterWebApiFilterProvider(config);
@@ -36,11 +39,11 @@ namespace API.Autofac
 
             builder.RegisterType<LicentaEntities>();
 
-            builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
+            builder.RegisterAssemblyTypes(aseemblyes)
                 .Where(t => t.Name.EndsWith("Service"))
                 .AsImplementedInterfaces();
 
-            builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
+            builder.RegisterAssemblyTypes(aseemblyes)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces();
 

@@ -28,6 +28,11 @@ namespace API.Services.Classes
             return this.cartRepository.AddOneProductToQuantity(userId, productId);
         }
 
+        public bool DeleteItemFromCart(long userId, long productId)
+        {
+            return this.cartRepository.DeleteItemFromCart(userId, productId);
+        }
+
         public bool FinishShoping(long cartId)
         {
             return this.cartRepository.FinishShoping(cartId);
