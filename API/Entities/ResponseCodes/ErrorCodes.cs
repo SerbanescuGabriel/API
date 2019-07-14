@@ -16,5 +16,9 @@ namespace API.Entities.ResponseCodes
         public static readonly string ErrorInvalidCredentials = "Error_InvalidCredentials";
         public static readonly string ErrorUsernameIsTaken = "Error_UsernameIsTaken";
         #endregion
+
+        #region Product
+        public static readonly string ErrorProductNotFound = "Error_ProductNotFound";
+        #endregion
     }
 }

@@ -10,40 +10,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/API.Db.dll">
-      <publishTime>07/14/2019 13:01:47</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.Db.dll.config">
       <publishTime>05/12/2019 11:32:06</publishTime>
     </File>
     <File Include="bin/API.Db.pdb">
-      <publishTime>07/14/2019 13:01:47</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.DbFactory.dll">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.DbFactory.pdb">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.dll">
-      <publishTime>07/14/2019 13:01:49</publishTime>
+      <publishTime>07/14/2019 19:50:47</publishTime>
     </File>
     <File Include="bin/API.pdb">
-      <publishTime>07/14/2019 13:01:49</publishTime>
+      <publishTime>07/14/2019 19:50:47</publishTime>
     </File>
     <File Include="bin/API.Repository.dll">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.Repository.dll.config">
       <publishTime>04/26/2019 20:47:56</publishTime>
     </File>
     <File Include="bin/API.Repository.pdb">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:46</publishTime>
     </File>
     <File Include="bin/API.Services.dll">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:47</publishTime>
     </File>
     <File Include="bin/API.Services.pdb">
-      <publishTime>07/14/2019 13:01:48</publishTime>
+      <publishTime>07/14/2019 19:50:47</publishTime>
     </File>
     <File Include="bin/API.Utils.dll">
       <publishTime>07/14/2019 13:01:48</publishTime>

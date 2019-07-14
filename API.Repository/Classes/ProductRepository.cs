@@ -53,7 +53,7 @@ namespace API.Repository.Classes
                               Price = s.PricePerUnit
                           };
 
-            return product.FirstOrDefault(); //pls work
+            return product.FirstOrDefault();
         }
     }
 }

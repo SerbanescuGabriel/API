@@ -72,7 +72,7 @@ namespace API.Controllers
         {
             if (request == null)
             {
-                return this.Ok(ErrorCodes.ErrorInvalidParameters);
+                return this.BadRequest(ErrorCodes.ErrorInvalidParameters);
             }
 
             var user = this.userService.Login(request.Username, request.Password);
@@ -83,7 +83,7 @@ namespace API.Controllers
             }
             else
             {
-                return this.Ok(ErrorCodes.ErrorInvalidCredentials);
+                return this.BadRequest(ErrorCodes.ErrorInvalidCredentials);
             }
         }
 

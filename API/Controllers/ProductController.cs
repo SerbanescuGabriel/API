@@ -1,4 +1,5 @@
-﻿using API.Services.Interfaces;
+﻿using API.Entities.ResponseCodes;
+using API.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,19 @@ namespace API.Controllers
         [Route("{barCode}")]
         public IHttpActionResult GetProductByBarCode([FromUri]string barCode)
         {
-            return this.Ok(this.productService.GetProductByBarCode(barCode));
+            if (barCode.Equals(String.Empty))
+            {
+                return this.BadRequest(ErrorCodes.ErrorInvalidParameters);
+            }
+
+            var product = this.productService.GetProductByBarCode(barCode);
+
+            if(product == null)
+            {
+                return this.Ok(ErrorCodes.ErrorProductNotFound);
+            }
+
+            return this.Ok(product);
         }
 
         [HttpGet]
