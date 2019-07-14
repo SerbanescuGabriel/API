@@ -23,7 +23,7 @@ namespace API.Controllers
         [Route("{barCode}")]
         public IHttpActionResult GetProductByBarCode([FromUri]string barCode)
         {
-            if (barCode.Equals(String.Empty))
+            if (String.IsNullOrEmpty(barCode) || String.IsNullOrWhiteSpace(barCode))
             {
                 return this.BadRequest(ErrorCodes.ErrorInvalidParameters);
             }
