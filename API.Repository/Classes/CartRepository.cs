@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using API.Db.Model;
 using API.DbFactory.Interfaces;
+using API.Repository.BusinessEntities;
 using API.Repository.Interfaces;
 
 namespace API.Repository.Classes
@@ -81,7 +82,31 @@ namespace API.Repository.Classes
 
             var cart = dbContext.Carts.FirstOrDefault(c => c.CartId == cartId);
             cart.IsCurrentCart = false;
+            cart.PurchaseDate = DateTime.Now;
             return dbContext.SaveChanges() > 0;
+        }
+
+        public List<ProductEntity> GetCartItemsByCartId(long cartId)
+        {
+            var products = from p in this.dbContext.Products
+                           join pm in this.dbContext.ProductManufacturers on p.ProductId equals pm.ProductId
+                           join cp in this.dbContext.CartProducts on p.ProductId equals cp.ProductId
+                           join cart in this.dbContext.Carts on cp.CartId equals cart.CartId
+                           join m in this.dbContext.Manufacturers on pm.ManufacturerId equals m.ManufacturerId
+                           join c in this.dbContext.Categories on p.CategoryId equals c.CategoryId
+                           join s in this.dbContext.StockInTrades on p.ProductId equals s.ProductId
+                           where cart.CartId == cartId && cart.IsCurrentCart == false
+                           select new ProductEntity
+                           {
+                               ProductId = p.ProductId,
+                               ProductName = p.ProductName,
+                               ManufacturerName = m.ManufacturerName,
+                               CategoryName = c.CategoryName,
+                               Price = s.PricePerUnit,
+                               Quantity = cp.Quantity
+                           };
+
+            return products.ToList();
         }
 
         public long GetCurrentCartId(long userId)
@@ -110,6 +135,19 @@ namespace API.Repository.Classes
                            };
 
             return products.ToList();
+        }
+
+        public List<CartEntity> GetUserPurchaseHistory(long userId)
+        {
+            var userCarts = dbContext.Carts
+                .Where(cart => cart.UserId == userId && cart.IsCurrentCart == false)
+                .Select(cart => new CartEntity()
+            {
+                CartId = cart.CartId,
+                PurchaseDate = cart.PurchaseDate
+            }).ToList();
+
+            return userCarts;
         }
 
         public bool SubstractOneProductToQuantity(long userId, long productId)

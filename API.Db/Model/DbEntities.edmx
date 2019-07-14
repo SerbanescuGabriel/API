@@ -12,6 +12,7 @@
           <Property Name="CartId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="bigint" Nullable="false" />
           <Property Name="IsCurrentCart" Type="bit" />
+          <Property Name="PurchaseDate" Type="date" />
         </EntityType>
         <EntityType Name="CartProduct">
           <Key>
@@ -439,6 +440,7 @@
           <NavigationProperty Name="User" Relationship="Self.FK__Cart__UserId__5812160E" FromRole="Cart" ToRole="User" />
           <NavigationProperty Name="CartProducts" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="Cart" ToRole="CartProduct" />
           <Property Name="IsCurrentCart" Type="Boolean" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CartProduct">
           <Key>
@@ -892,6 +894,7 @@
           <EntitySetMapping Name="Carts">
             <EntityTypeMapping TypeName="LicentaModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
                 <ScalarProperty Name="IsCurrentCart" ColumnName="IsCurrentCart" />
                 <ScalarProperty Name="CartId" ColumnName="CartId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

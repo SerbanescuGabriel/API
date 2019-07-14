@@ -1,4 +1,5 @@
-﻿using API.Repository.Classes;
+﻿using API.Repository.BusinessEntities;
+using API.Repository.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,9 @@ namespace API.Services.Interfaces
         bool SubstractOneProductToQuantity(long userId, long productId);
 
         bool DeleteItemFromCart(long userId, long productId);
+
+        List<CartEntity> GetUserPurchaseHistory(long userId);
+
+        List<ProductEntity> GetCartItemsByCartId(long cartId);
     }
 }

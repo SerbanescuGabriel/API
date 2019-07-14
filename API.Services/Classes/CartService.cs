@@ -1,4 +1,5 @@
-﻿using API.Repository.Classes;
+﻿using API.Repository.BusinessEntities;
+using API.Repository.Classes;
 using API.Repository.Interfaces;
 using API.Services.Interfaces;
 using System;
@@ -38,6 +39,11 @@ namespace API.Services.Classes
             return this.cartRepository.FinishShoping(cartId);
         }
 
+        public List<ProductEntity> GetCartItemsByCartId(long cartId)
+        {
+            return this.cartRepository.GetCartItemsByCartId(cartId);
+        }
+
         public long GetCurrentCartId(long userId)
         {
             return this.cartRepository.GetCurrentCartId(userId);
@@ -46,6 +52,11 @@ namespace API.Services.Classes
         public List<ProductEntity> GetCurrentCartProducts(long userId)
         {
             return this.cartRepository.GetCurrentCartProducts(userId);
+        }
+
+        public List<CartEntity> GetUserPurchaseHistory(long userId)
+        {
+            return this.cartRepository.GetUserPurchaseHistory(userId);
         }
 
         public bool SubstractOneProductToQuantity(long userId, long productId)

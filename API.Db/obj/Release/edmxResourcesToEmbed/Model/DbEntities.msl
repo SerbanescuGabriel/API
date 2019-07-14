@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Carts">
       <EntityTypeMapping TypeName="LicentaModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
           <ScalarProperty Name="IsCurrentCart" ColumnName="IsCurrentCart" />
           <ScalarProperty Name="CartId" ColumnName="CartId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />

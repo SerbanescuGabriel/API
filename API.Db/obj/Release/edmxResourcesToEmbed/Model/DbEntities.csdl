@@ -9,6 +9,7 @@
     <NavigationProperty Name="User" Relationship="Self.FK__Cart__UserId__5812160E" FromRole="Cart" ToRole="User" />
     <NavigationProperty Name="CartProducts" Relationship="Self.FK__CartProdu__CartI__5AEE82B9" FromRole="Cart" ToRole="CartProduct" />
     <Property Name="IsCurrentCart" Type="Boolean" />
+    <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="CartProduct">
     <Key>

@@ -64,5 +64,19 @@ namespace API.Controllers
 
             return this.Ok(this.cartService.DeleteItemFromCart(request.UserId, request.ProductId));
         }
+
+        [HttpGet]
+        [Route("history/{userId}")]
+        public IHttpActionResult GetUserPurchaseHistory([FromUri]long userId)
+        {
+            return this.Ok(cartService.GetUserPurchaseHistory(userId));
+        }
+
+        [HttpGet]
+        [Route("items/{cartId}")]
+        public IHttpActionResult GetCartItemsByCartId([FromUri] long cartId)
+        {
+            return this.Ok(cartService.GetCartItemsByCartId(cartId));
+        }
     }
 }
